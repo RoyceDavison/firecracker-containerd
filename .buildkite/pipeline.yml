@@ -15,7 +15,7 @@ steps:
 
   - label: ":docker: Build"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:
@@ -34,7 +34,7 @@ steps:
     # we don't hit the loop device limit
   - label: ":lint-roller: loop device cleanup"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     command: 'sudo losetup -D'
@@ -51,11 +51,11 @@ steps:
     # This should run in the same queue, but we don't care whether it runs on
     # the same host.
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
 
   - label: ":protractor: verify proto"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:
@@ -67,7 +67,7 @@ steps:
 
   - label: ":golang: go mod tidy"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:
@@ -79,7 +79,7 @@ steps:
 
   - label: ":gear: unit tests"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:
@@ -91,7 +91,7 @@ steps:
 
   - label: ":rotating_light: :running_shirt_with_sash: runtime isolated tests"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:
@@ -107,7 +107,7 @@ steps:
 
   - label: ":rotating_light: :exclamation: example tests"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:

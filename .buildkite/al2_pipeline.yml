@@ -15,7 +15,7 @@ steps:
 
   - label: ":docker: Build"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:
@@ -30,7 +30,7 @@ steps:
 
   - label: ":onion: al2 tests"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     env:
@@ -46,7 +46,7 @@ steps:
 
   - label: ":onion: cleanup"
     agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-royce}"
       distro: "${BUILDKITE_AGENT_META_DATA_DISTRO}"
       hostname: "${BUILDKITE_AGENT_META_DATA_HOSTNAME}"
     command:
